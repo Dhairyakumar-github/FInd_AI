@@ -6,7 +6,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: const Color.fromARGB(255, 226, 241, 241),
       body: SingleChildScrollView(
         child: Center(
@@ -65,9 +64,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 30,
-              ),
+              const SizedBox(height: 30),
               SizedBox(
                 child: Expanded(
                   child: Row(
@@ -84,7 +81,8 @@ class ProfilePage extends StatelessWidget {
                                 flex: 1,
                                 fit: FlexFit.tight,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, right: 5),
+                                  margin:
+                                      const EdgeInsets.only(left: 10, right: 5),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.amber,
@@ -99,7 +97,8 @@ class ProfilePage extends StatelessWidget {
                                       left: 10, right: 5, top: 10),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
-                                    color: const Color.fromARGB(255, 115, 59, 236),
+                                    color:
+                                        const Color.fromARGB(255, 115, 59, 236),
                                   ),
                                 ),
                               ),
@@ -127,8 +126,8 @@ class ProfilePage extends StatelessWidget {
                                     ),
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
-                                      color:
-                                          const Color.fromARGB(255, 219, 188, 219),
+                                      color: const Color.fromARGB(
+                                          255, 219, 188, 219),
                                     ),
                                   ),
                                 ),
@@ -140,8 +139,8 @@ class ProfilePage extends StatelessWidget {
                                         left: 5, right: 10, top: 10),
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
-                                      color:
-                                          const Color.fromARGB(255, 90, 167, 111),
+                                      color: const Color.fromARGB(
+                                          255, 90, 167, 111),
                                     ),
                                   ),
                                 ),
@@ -167,7 +166,6 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
-
             ],
           ),
         ),
