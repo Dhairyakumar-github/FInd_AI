@@ -5,7 +5,7 @@ import 'package:project/Pages/catagoryPage.dart';
 import 'package:project/Pages/explorePage.dart';
 import 'package:project/Pages/SearchPage.dart';
 import 'package:project/Pages/profilePage.dart';
-import 'package:project/homePage.dart';
+import 'package:project/Pages/homePage.dart';
 
 class Custombottomnivationbar extends StatelessWidget {
   Custombottomnivationbar({super.key});
@@ -31,6 +31,7 @@ class Custombottomnivationbar extends StatelessWidget {
               iconSize: 33,
               showSelectedLabels: false,
               showUnselectedLabels: false,
+              backgroundColor: Color.fromARGB(255, 224, 224, 255),
               selectedLabelStyle:
                   const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               currentIndex: navigationControllor.selectedIndex.value,

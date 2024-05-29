@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/Widgits/SearchList.dart';
 import 'package:project/Widgits/searchBar.dart';
 
 class SearchPage extends StatelessWidget {
@@ -7,13 +8,17 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromARGB(255, 150, 207, 235),
+      backgroundColor: Color.fromARGB(255, 245, 248, 252),
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Column(
-          children: [CustomSearchBar()],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CustomSearchBar(),
+              SearchList(),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }

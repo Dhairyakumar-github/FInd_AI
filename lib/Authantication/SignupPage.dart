@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/Authantication/Aunthanticate_Controlllor.dart';
 import 'package:project/Authantication/signIn.dart';
-import 'package:project/UiHelper/uiHelper.dart';
+import 'package:project/Widgits/uiHelper.dart';
 
 class SignupPage extends StatelessWidget {
   SignupPage({super.key});

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/Authantication/Aunthanticate_Controlllor.dart';
 import 'package:project/Authantication/SignupPage.dart';
-import 'package:project/UiHelper/uiHelper.dart';
+import 'package:project/Pages/bottomnavugationbar.dart';
+import 'package:project/Widgits/uiHelper.dart';
+import 'package:project/Pages/homePage.dart';
 
 class SignInPage extends StatelessWidget {
   SignInPage({super.key});
@@ -56,20 +58,25 @@ class SignInPage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    height: 70,
-                    alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width * 0.95,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Text(
-                      "Sign In",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white),
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => Custombottomnivationbar());
+                    },
+                    child: Container(
+                      height: 70,
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Text(
+                        "Sign In",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                   const SizedBox(

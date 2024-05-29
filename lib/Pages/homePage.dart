@@ -1,29 +1,33 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project/Pages/bottomnavugationbar.dart';
 import 'package:project/Pages/SearchPage.dart';
+import 'package:project/Widgits/CarousalSlider.dart';
+
+import 'package:project/Widgits/CustomCategory.dart';
 import 'package:project/Widgits/card.dart';
-import 'package:project/Widgits/tabbar.dart';
-import 'package:project/controllor/controllor.dart';
+import 'package:project/Widgits/searchBar.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       // bottomNavigationBar: Custombottomnivationbar(),
       // appBar: AppBar(
       //   backgroundColor: const Color.fromARGB(255, 150, 207, 235),
       // ),
-      backgroundColor: Color.fromARGB(255, 242, 245, 245),
+      // backgroundColor: Color.fromARGB(255, 242, 245, 245),
+      backgroundColor: const Color.fromARGB(255, 245, 248, 252),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Align(
                 alignment: Alignment.topLeft,
@@ -41,7 +45,7 @@ class HomePage extends StatelessWidget {
             //   tag: "hero",
             //   child: GestureDetector(
             //     onTap: () {
-            //       Get.to(NewPage());
+            //       // Get.to(NewPage());
             //       // Navigator.push(context,
             //       //     MaterialPageRoute(builder: (context) => NewPage()));
             //     },
@@ -79,22 +83,66 @@ class HomePage extends StatelessWidget {
             // const SizedBox(
             //   height: 10,
             // ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  Cardd(),
-                  Cardd(),
-                  Cardd(),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 30,
+            CrousalSlider(),
+
+            const SizedBox(
+              height: 20,
             ),
 
             // tabbar
             // CustomTabbar()
+
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                "Category",
+                style: TextStyle(
+                    fontFamily: "Bhloo Bhai 2",
+                    fontSize: 30,
+                    fontWeight: FontWeight.w600,
+                    color: Color.fromARGB(255, 75, 69, 69)),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  CustomCategory(),
+                  CustomCategory(),
+                  CustomCategory(),
+                  CustomCategory(),
+                  CustomCategory(),
+                  CustomCategory(),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                "Latest",
+                style: TextStyle(
+                    fontFamily: "Bhloo Bhai 2",
+                    fontSize: 30,
+                    fontWeight: FontWeight.w600,
+                    color: Color.fromARGB(255, 75, 69, 69)),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Cardd(),
+            Cardd(),
+            Cardd(),
+
+            const SizedBox(
+              height: 50,
+            ),
           ],
         ),
       ),
