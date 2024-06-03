@@ -17,23 +17,27 @@ class CustomSearchBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.77,
-              child: TextField(
-                textAlign: TextAlign.start,
-                textAlignVertical: TextAlignVertical.top,
-                style: const TextStyle(fontSize: 20),
-                decoration: InputDecoration(
+            Expanded(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.77,
+                child: TextField(
+                  textAlign: TextAlign.start,
+                  textAlignVertical: TextAlignVertical.top,
+                  style: const TextStyle(fontSize: 20),
+                  decoration: InputDecoration(
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     hintText: "Type Something",
                     hintStyle: TextStyle(fontSize: 20),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide.none)),
+                        borderSide: BorderSide.none),
+                  ),
+                ),
               ),
             ),
             Container(
+              width: 60,
               margin: EdgeInsets.symmetric(horizontal: 10),
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(

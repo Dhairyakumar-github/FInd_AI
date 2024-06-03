@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                       fontFamily: "Bhloo Bhai 2",
                       fontSize: 45,
                       fontWeight: FontWeight.w500,
-                      color: Color.fromARGB(255, 75, 69, 69)),
+                      color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ),
             ),
@@ -100,7 +100,7 @@ class HomePage extends StatelessWidget {
                     fontFamily: "Bhloo Bhai 2",
                     fontSize: 30,
                     fontWeight: FontWeight.w600,
-                    color: Color.fromARGB(255, 75, 69, 69)),
+                    color: Color.fromARGB(255, 0, 0, 0)),
               ),
             ),
             const SizedBox(
@@ -110,6 +110,9 @@ class HomePage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   CustomCategory(),
                   CustomCategory(),
                   CustomCategory(),
@@ -130,18 +133,20 @@ class HomePage extends StatelessWidget {
                     fontFamily: "Bhloo Bhai 2",
                     fontSize: 30,
                     fontWeight: FontWeight.w600,
-                    color: Color.fromARGB(255, 75, 69, 69)),
+                    color: Color.fromARGB(255, 0, 0, 0)),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
-            Cardd(),
-            Cardd(),
-            Cardd(),
+            Wrap(children: [
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+            ]),
 
             const SizedBox(
-              height: 50,
+              height: 100,
             ),
           ],
         ),
