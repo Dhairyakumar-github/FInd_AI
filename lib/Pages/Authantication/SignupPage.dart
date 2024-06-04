@@ -44,22 +44,45 @@ class SignupPage extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  CustomTextField(
-                    hintText: "Name",
-                    controllor: authControllor.name,
-                    secure: false,
+                  TextFormField(
+                    decoration: InputDecoration(hintText: "Name"),
                   ),
-                  CustomTextField(
-                    hintText: "Email",
-                    controllor: authControllor.email,
-                    secure: false,
+                  const SizedBox(
+                    height: 10,
                   ),
-                  CustomTextField(
-                    hintText: "Password",
-                    controllor: authControllor.password,
-                    secure: true,
-                    sufix: const Icon(Icons.remove_red_eye),
+                  TextFormField(
+                    decoration: InputDecoration(hintText: "Email"),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    controller: authControllor.password,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                    ),
+                  ),
+                  // CustomTextField(
+                  //   hintText: "Email",
+                  //   controllor: authControllor.email,
+                  //   secure: false,
+                  // ),
+                  // CustomTextField(
+                  //   hintText: "Password",
+                  //   controllor: authControllor.password,
+                  //   secure: true,
+                  //   sufix: const Icon(Icons.remove_red_eye),
+                  // ),
+
+                  //chackBox
+
+                  // Row(
+                  //   children: [
+                  //     Checkbox(value: false, onChanged: (Value) {}),
+                  //     Text("I have read the terms and condition")
+                  //   ],
+                  // ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -101,8 +124,15 @@ class SignupPage extends StatelessWidget {
                       Container(
                         height: 45,
                         width: 45,
-                        child: Image.asset(
-                          "assets/google-logo-9808.png",
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(width: 1),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "assets/google-logo-9808.png",
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -111,10 +141,17 @@ class SignupPage extends StatelessWidget {
                       Container(
                         height: 45,
                         width: 45,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.asset(
-                            "assets/facebook-logo-493.png",
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(width: 1),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(7.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              "assets/facebook-logo-493.png",
+                            ),
                           ),
                         ),
                       ),

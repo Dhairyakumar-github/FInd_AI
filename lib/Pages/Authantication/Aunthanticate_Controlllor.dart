@@ -5,4 +5,9 @@ class AuthControllor extends GetxController {
   final name = TextEditingController();
   final email = TextEditingController();
   final password = TextEditingController();
+  GlobalKey signupFormKey = GlobalKey();
+
+  Future<void> SignUp() async {
+    try {} catch (e) {}
+  }
 }

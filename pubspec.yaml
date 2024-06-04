@@ -35,6 +35,11 @@ dependencies:
   flutter_native_splash: ^2.4.0
   lottie: ^3.1.2
   smooth_page_indicator: ^1.1.0
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.20.0
+  cloud_firestore: ^4.17.5
+  firebase_analytics: ^10.10.7
+  connectivity_plus: ^6.0.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

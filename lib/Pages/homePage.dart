@@ -103,9 +103,9 @@ class HomePage extends StatelessWidget {
                     color: Color.fromARGB(255, 0, 0, 0)),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            // const SizedBox(
+            //   height: 10,
+            // ),
             const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -136,14 +136,16 @@ class HomePage extends StatelessWidget {
                     color: Color.fromARGB(255, 0, 0, 0)),
               ),
             ),
-            const SizedBox(
-              height: 20,
+            // const SizedBox(
+            //   height: 20,
+            // ),
+            Wrap(
+              children: [
+                CustomCard(),
+                CustomCard(),
+                CustomCard(),
+              ],
             ),
-            Wrap(children: [
-              CustomCard(),
-              CustomCard(),
-              CustomCard(),
-            ]),
 
             const SizedBox(
               height: 100,

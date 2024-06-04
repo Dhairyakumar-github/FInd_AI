@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "52945135961",
+    "project_id": "find-ai-5a3a4",
+    "storage_bucket": "find-ai-5a3a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52945135961:android:8e71b563f885b6258c4448",
+        "android_client_info": {
+          "package_name": "com.example.project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk1VY4VGdM491_l2WMbzYqiHd5kn_C5jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

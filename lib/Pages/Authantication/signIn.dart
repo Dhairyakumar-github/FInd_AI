@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/Pages/Authantication/Aunthanticate_Controlllor.dart';
 import 'package:project/Pages/Authantication/SignupPage.dart';
+import 'package:project/Pages/Authantication/validator.dart';
 import 'package:project/Pages/bottomnavugationbar.dart';
 import 'package:project/Widgits/uiHelper.dart';
 import 'package:project/Pages/homePage.dart';
@@ -15,6 +16,7 @@ class SignInPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Form(
+            key: authControllor.signupFormKey,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -45,15 +47,26 @@ class SignInPage extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  CustomTextField(
-                    hintText: "Email",
-                    controllor: authControllor.email,
-                    secure: false,
+                  // CustomTextField(
+                  //   hintText: "Email",
+                  //   controllor: authControllor.email,
+                  //   secure: false,
+                  // ),
+                  TextFormField(
+                    validator: (value) =>
+                        Validator.validateEmptyText("Email", value),
+                    decoration: InputDecoration(hintText: "Email"),
                   ),
-                  CustomTextField(
-                    hintText: "Password",
-                    controllor: authControllor.password,
-                    secure: true,
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    validator: (value) => Validator.validatePassword(value),
+                    controller: authControllor.password,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
@@ -101,8 +114,15 @@ class SignInPage extends StatelessWidget {
                       Container(
                         height: 45,
                         width: 45,
-                        child: Image.asset(
-                          "assets/google-logo-9808.png",
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(width: 1),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "assets/google-logo-9808.png",
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -111,10 +131,17 @@ class SignInPage extends StatelessWidget {
                       Container(
                         height: 45,
                         width: 45,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.asset(
-                            "assets/facebook-logo-493.png",
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(width: 1),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(7.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              "assets/facebook-logo-493.png",
+                            ),
                           ),
                         ),
                       ),

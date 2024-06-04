@@ -33,7 +33,7 @@ class CustomTextField extends StatelessWidget {
               width: 1.9,
               color: const Color.fromARGB(255, 0, 0, 0),
             ),
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(10),
           ),
           contentPadding: const EdgeInsets.all(20),
         ),
