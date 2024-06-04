@@ -7,3 +7,4 @@ flutter_native_splash:
     image: assets/animation/splash_logo.png
 
   web: false
+  android: true

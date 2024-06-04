@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project/Authantication/Aunthanticate_Controlllor.dart';
-import 'package:project/Authantication/SignupPage.dart';
-import 'package:project/Pages/bottomnavugationbar.dart';
+import 'package:project/Pages/Authantication/Aunthanticate_Controlllor.dart';
+import 'package:project/Pages/Authantication/signIn.dart';
 import 'package:project/Widgits/uiHelper.dart';
-import 'package:project/Pages/homePage.dart';
 
-class SignInPage extends StatelessWidget {
-  SignInPage({super.key});
+class SignupPage extends StatelessWidget {
+  SignupPage({super.key});
   AuthControllor authControllor = Get.put(AuthControllor());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +23,7 @@ class SignInPage extends StatelessWidget {
                     height: 40,
                   ),
                   const Text(
-                    "Let's Sign In",
+                    "Let's Register",
                     style: TextStyle(
                         fontSize: 40, fontWeight: FontWeight.w600, height: 1),
                   ),
@@ -36,7 +35,7 @@ class SignInPage extends StatelessWidget {
                     height: 10,
                   ),
                   const Text(
-                    "Welcome back",
+                    "Have a great journey",
                     style: TextStyle(
                         fontSize: 30,
                         color: Color.fromARGB(177, 0, 0, 0),
@@ -44,6 +43,11 @@ class SignInPage extends StatelessWidget {
                   ),
                   const SizedBox(
                     height: 40,
+                  ),
+                  CustomTextField(
+                    hintText: "Name",
+                    controllor: authControllor.name,
+                    secure: false,
                   ),
                   CustomTextField(
                     hintText: "Email",
@@ -54,29 +58,25 @@ class SignInPage extends StatelessWidget {
                     hintText: "Password",
                     controllor: authControllor.password,
                     secure: true,
+                    sufix: const Icon(Icons.remove_red_eye),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  InkWell(
-                    onTap: () {
-                      Get.to(() => Custombottomnivationbar());
-                    },
-                    child: Container(
-                      height: 70,
-                      alignment: Alignment.center,
-                      width: MediaQuery.of(context).size.width * 0.95,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Text(
-                        "Sign In",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
-                      ),
+                  Container(
+                    height: 70,
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width * 0.95,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Text(
+                      "Sign up",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
                     ),
                   ),
                   const SizedBox(
@@ -127,7 +127,7 @@ class SignInPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Don't have an account?",
+                        "Already a User?",
                         style: TextStyle(fontSize: 18),
                       ),
                       const SizedBox(
@@ -135,10 +135,10 @@ class SignInPage extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          Get.to(() => SignupPage());
+                          Get.to(() => SignInPage());
                         },
                         child: const Text(
-                          "Sign Up",
+                          "Login",
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 5, 88, 156),

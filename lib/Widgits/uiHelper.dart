@@ -4,11 +4,13 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController controllor;
   final bool secure;
+  final Icon? sufix;
   const CustomTextField(
       {super.key,
       required this.hintText,
       required this.controllor,
-      required this.secure});
+      required this.secure,
+      this.sufix});
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +21,12 @@ class CustomTextField extends StatelessWidget {
         controller: controllor,
         style: const TextStyle(fontSize: 20),
         decoration: InputDecoration(
+          suffixIcon: sufix,
+          // prefixIcon: Icon(Icons.email),
           hintText: hintText,
           hintStyle: const TextStyle(fontSize: 20),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(10),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
