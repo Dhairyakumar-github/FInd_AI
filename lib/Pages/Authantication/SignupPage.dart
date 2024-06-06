@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:project/Pages/Authantication/Aunthanticate_Controlllor.dart';
 import 'package:project/Pages/Authantication/signIn.dart';
+import 'package:project/Pages/Authantication/validator.dart';
 import 'package:project/Widgits/uiHelper.dart';
 
 class SignupPage extends StatelessWidget {
@@ -14,6 +16,7 @@ class SignupPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Form(
+            key: authControllor.signupFormKey,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -45,22 +48,39 @@ class SignupPage extends StatelessWidget {
                     height: 40,
                   ),
                   TextFormField(
+                    validator: (value) =>
+                        Validator.validateEmptyText("Name", value),
+                    controller: authControllor.name,
                     decoration: InputDecoration(hintText: "Name"),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   TextFormField(
+                    validator: (value) => Validator.validateEmail(value),
+                    controller: authControllor.email,
                     decoration: InputDecoration(hintText: "Email"),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  TextFormField(
-                    controller: authControllor.password,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: "Password",
+                  Obx(
+                    () => TextFormField(
+                      validator: (value) => Validator.validatePassword(value),
+                      controller: authControllor.password,
+                      obscureText: authControllor.hidePassword.value,
+                      decoration: InputDecoration(
+                        hintText: "Password",
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            authControllor.hidePassword.value =
+                                !authControllor.hidePassword.value;
+                          },
+                          icon: authControllor.hidePassword.value
+                              ? Icon(Icons.visibility_off)
+                              : Icon(Icons.visibility),
+                        ),
+                      ),
                     ),
                   ),
                   // CustomTextField(
@@ -86,20 +106,25 @@ class SignupPage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    height: 70,
-                    alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width * 0.95,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Text(
-                      "Sign up",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white),
+                  InkWell(
+                    onTap: () {
+                      authControllor.SignUp();
+                    },
+                    child: Container(
+                      height: 70,
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Text(
+                        "Sign up",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                   const SizedBox(

@@ -4,6 +4,9 @@ class MyAppTheme {
   MyAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
+    appBarTheme: AppBarTheme(
+      backgroundColor: const Color.fromARGB(255, 255, 251, 240),
+    ),
     useMaterial3: true,
     fontFamily: "Bhloo Bhai 2",
     brightness: Brightness.light,

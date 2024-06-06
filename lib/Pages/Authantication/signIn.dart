@@ -16,7 +16,7 @@ class SignInPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Form(
-            key: authControllor.signupFormKey,
+            // key: authControllor.signupFormKey,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
