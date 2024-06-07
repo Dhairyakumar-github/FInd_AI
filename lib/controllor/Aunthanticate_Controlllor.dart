@@ -38,7 +38,6 @@ class AuthControllor extends GetxController {
         Loader.stopLoader();
         return;
       }
-      ;
 
 // --------------------------Email and Password SignIn -------------------------------------
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:project/Pages/Authantication/Aunthanticate_Controlllor.dart';
+import 'package:project/controllor/Aunthanticate_Controlllor.dart';
 import 'package:project/Pages/Authantication/signIn.dart';
 import 'package:project/Pages/Authantication/validator.dart';
 import 'package:project/Widgits/uiHelper.dart';

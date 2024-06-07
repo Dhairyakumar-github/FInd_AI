@@ -1,3 +1,7 @@
+import 'package:get/get.dart';
+import 'package:project/Pages/Authantication/signIn.dart';
+import 'package:project/utils/loder.dart';
+
 class Validator {
   static validateEmptyText(String? fieldName, String? value) {
     if (value == null || value.isEmpty) {
@@ -12,6 +16,8 @@ class Validator {
     final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
 
     if (!emailRegExp.hasMatch(value)) {
+      // Get.offAll(SignInPage());
+      // Loader.errorSnakBar(title: "oh snap", message: "Invalid email address");
       return "Invalid email address";
     }
     return null;

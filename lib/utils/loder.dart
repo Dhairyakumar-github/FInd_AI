@@ -9,7 +9,7 @@ class Loader {
       barrierDismissible: false,
       builder: (_) => PopScope(
         child: Container(
-          color: const Color.fromARGB(255, 210, 206, 195),
+          color: Color.fromARGB(255, 244, 243, 238),
           height: double.infinity,
           width: double.infinity,
           child: Column(
@@ -17,11 +17,12 @@ class Loader {
               SizedBox(
                 height: 250,
               ),
-              LottieBuilder.asset("assets/lottie/loading.json"),
+              SizedBox(
+                  width: 200,
+                  child: LottieBuilder.asset("assets/lottie/loading.json")),
               SizedBox(
                 height: 20,
               ),
-              Text("We are processing your information...")
             ],
           ),
         ),
