@@ -28,22 +28,19 @@ class SearchList extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 14),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: const Expanded(
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
                       child: Text(
-                        "John Deo ",
+                        "John Deo",
                         maxLines: 2,
-                        softWrap: true,
-                        style: TextStyle(
-                          height: 0.9,
-                          overflow: TextOverflow.ellipsis,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
                           fontFamily: "Bhloo Bhai 2",
                           fontSize: 25,
                           fontWeight: FontWeight.w600,
@@ -51,16 +48,16 @@ class SearchList extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  Text(
-                    "Free",
-                    style: TextStyle(
-                      fontFamily: "Bhloo Bhai 2",
-                      fontSize: 20,
-                      fontWeight: FontWeight.w800,
+                    Text(
+                      "Free",
+                      style: const TextStyle(
+                        fontFamily: "Bhloo Bhai 2",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],

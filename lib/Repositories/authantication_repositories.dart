@@ -31,13 +31,17 @@ class AuthanticationRepositories extends GetxController {
       if (user.emailVerified) {
         Get.offAll(() => Custombottomnivationbar());
       } else {
-        Get.offAll(() => VarificationPage());
+        Get.offAll(
+          () => VarificationPage(
+            email: user.email,
+          ),
+        );
       }
     } else {
       deviceStorage.writeIfNull("IsFirstTime", true);
       deviceStorage.read("IsFirstTime") != true
-          ? Get.offAll(SignInPage())
-          : Get.offAll(OnbordingScreen());
+          ? Get.offAll(() => SignInPage())
+          : Get.offAll(() => OnbordingScreen());
     }
   }
 // LOGIN WITH EMAIL AND PASSWARD
@@ -80,6 +84,17 @@ class AuthanticationRepositories extends GetxController {
       throw "Something went wrong";
     }
   }
+  // Email [FORGET PASSWORD] ---------------
+
+  Future<void> sendPasswordResantEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseException catch (e) {
+      throw CustomFirebaseExceptions.handleFirebaseAuthException(e.code);
+    } catch (e) {
+      throw "Something went wrong";
+    }
+  }
 
   // Google Sign in --------------------
 
@@ -97,7 +112,9 @@ class AuthanticationRepositories extends GetxController {
     } on FirebaseException catch (e) {
       throw CustomFirebaseExceptions.handleFirebaseAuthException(e.code);
     } catch (e) {
-      throw "Something went wrong";
+      // throw "Something went wrong";
+      if (kDebugMode) print("Something went wrong: $e");
+      return null;
     }
   }
 
@@ -105,6 +122,7 @@ class AuthanticationRepositories extends GetxController {
   Future<void> logout() async {
     try {
       await _auth.signOut();
+      await GoogleSignIn().signOut();
       Get.offAll(() => SignInPage());
     } on FirebaseException catch (e) {
       throw CustomFirebaseExceptions.handleFirebaseAuthException(e.code);

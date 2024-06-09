@@ -8,24 +8,22 @@ class CatagoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        child: Expanded(
-          child: Column(
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.06,
-              ),
-              CustomSearchBar(),
-              Container(
-                // color: Colors.cyan,
-                height: MediaQuery.of(context).size.height,
-                child: Expanded(
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: constraints.maxHeight * 0.06,
+                ),
+                CustomSearchBar(),
+                Container(
+                  height: constraints.maxHeight * 0.94,
                   child: GridView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: 15,
-                    // padding: EdgeInsets.symmetric(vertical: 10),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
@@ -37,10 +35,10 @@ class CatagoryPage extends StatelessWidget {
                     },
                   ),
                 ),
-              ),
-            ],
-          ),
-        ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

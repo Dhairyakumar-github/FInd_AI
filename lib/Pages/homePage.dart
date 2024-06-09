@@ -97,21 +97,22 @@ class HomePage extends StatelessWidget {
               child: Text(
                 "Category",
                 style: TextStyle(
-                    fontFamily: "Bhloo Bhai 2",
-                    fontSize: 30,
-                    fontWeight: FontWeight.w600,
-                    color: Color.fromARGB(255, 0, 0, 0)),
+                  fontFamily: "Bhloo Bhai 2",
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
               ),
             ),
-            // const SizedBox(
-            //   height: 10,
-            // ),
+            const SizedBox(
+              height: 5,
+            ),
             const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   SizedBox(
-                    width: 10,
+                    width: 15,
                   ),
                   CustomCategory(),
                   CustomCategory(),
@@ -131,7 +132,7 @@ class HomePage extends StatelessWidget {
                 "Latest",
                 style: TextStyle(
                     fontFamily: "Bhloo Bhai 2",
-                    fontSize: 30,
+                    fontSize: 28,
                     fontWeight: FontWeight.w600,
                     color: Color.fromARGB(255, 0, 0, 0)),
               ),

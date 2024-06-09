@@ -8,11 +8,14 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 245, 248, 252),
+      // backgroundColor: Color(0xFF7D29),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(
+                height: 20,
+              ),
               CustomSearchBar(),
               SearchList(),
             ],

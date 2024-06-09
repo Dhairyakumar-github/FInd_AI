@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project/Pages/forgatePasswordPage.dart';
 import 'package:project/controllor/Aunthanticate_Controlllor.dart';
 import 'package:project/Pages/Authantication/SignupPage.dart';
 import 'package:project/Pages/Authantication/validator.dart';
@@ -14,6 +15,7 @@ class SignInPage extends StatelessWidget {
   Signincontrollor controllor = Get.put(Signincontrollor());
   AuthanticationRepositories authControllor =
       Get.put(AuthanticationRepositories());
+  final signincontrollor = Get.put(Signincontrollor());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,21 +90,37 @@ class SignInPage extends StatelessWidget {
                     height: 10,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Obx(
-                        () => Checkbox(
-                          value: controllor.rememberMe.value,
-                          onChanged: (v) {
-                            controllor.rememberMe.value =
-                                !controllor.rememberMe.value;
-
-                            print(v);
-                          },
-                        ),
+                      Row(
+                        children: [
+                          Obx(
+                            () => Checkbox(
+                              value: controllor.rememberMe.value,
+                              onChanged: (v) {
+                                controllor.rememberMe.value =
+                                    !controllor.rememberMe.value;
+                              },
+                            ),
+                          ),
+                          Text(
+                            "Remember me",
+                            style: TextStyle(fontSize: 20),
+                          )
+                        ],
                       ),
-                      Text(
-                        "Remember me",
-                        style: TextStyle(fontSize: 20),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          onTap: () => Get.to(() => ForgatePasswordPage()),
+                          child: Text(
+                            "Forget password",
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: ""),
+                          ),
+                        ),
                       )
                     ],
                   ),
@@ -150,7 +168,7 @@ class SignInPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
-                        onTap: () => authControllor.signInWithGoogle,
+                        onTap: () => signincontrollor.googleSignIN(),
                         child: Container(
                           height: 45,
                           width: 45,

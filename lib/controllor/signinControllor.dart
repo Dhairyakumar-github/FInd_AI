@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:project/Repositories/authantication_repositories.dart';
+import 'package:project/Repositories/userRepositories.dart';
 import 'package:project/Widgits/Network/networkManager.dart';
 import 'package:project/utils/Exceptions/firebase_auth_exception.dart';
 import 'package:project/utils/loder.dart';
@@ -13,7 +14,7 @@ class Signincontrollor extends GetxController {
   final password = TextEditingController();
   final rememberMe = false.obs;
   final hidePassword = true.obs;
-
+  final userRepo = Get.put(UserRepositories());
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
   NetworkManager networkManager = Get.put(NetworkManager());
@@ -78,6 +79,17 @@ class Signincontrollor extends GetxController {
         return;
       }
       final userCredential = await authRepositoties.signInWithGoogle();
-    } catch (e) {}
+
+      await userRepo.saveUserRecord(userCredential);
+
+      Loader.stopLoader();
+      authRepositoties.screenRedirect();
+
+      // Loader.stopLoader();
+    } catch (e) {
+      Loader.stopLoader();
+
+      Loader.errorSnakBar(title: "oh Snap", message: e.toString());
+    }
   }
 }

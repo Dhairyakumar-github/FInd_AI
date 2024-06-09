@@ -4,8 +4,9 @@ import 'package:get/get.dart';
 import 'package:project/Pages/catagoryPage.dart';
 import 'package:project/Pages/explorePage.dart';
 import 'package:project/Pages/SearchPage.dart';
-import 'package:project/Pages/profilePage.dart';
+import 'package:project/Pages/ProfilePage/profilePage.dart';
 import 'package:project/Pages/homePage.dart';
+import 'package:project/Pages/ProfilePage/profilePage.dart';
 
 class Custombottomnivationbar extends StatelessWidget {
   Custombottomnivationbar({super.key});
@@ -113,9 +114,11 @@ class Custombottomnivationbar extends StatelessWidget {
           ),
         ),
       ),
-      body: Obx(
-        () => navigationControllor
-            .pages[navigationControllor.selectedIndex.value],
+      body: SizedBox(
+        child: Obx(
+          () => navigationControllor
+              .pages[navigationControllor.selectedIndex.value],
+        ),
       ),
     );
   }

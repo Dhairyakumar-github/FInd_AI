@@ -8,6 +8,9 @@ import 'package:project/Pages/Authantication/signIn.dart';
 import 'package:project/Pages/OnbordingScreen/onbording.dart';
 import 'package:project/Pages/VarificationPages/varificationPage.dart';
 import 'package:project/Pages/bottomnavugationbar.dart';
+import 'package:project/Pages/forgatePasswordPage.dart';
+import 'package:project/Pages/ProfilePage/profileMainPage.dart';
+import 'package:project/Pages/resentPassword.dart';
 import 'package:project/Repositories/authantication_repositories.dart';
 import 'package:project/Theme/theme.dart';
 import 'package:project/dummyPage.dart';
@@ -20,7 +23,9 @@ void main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  ).then((FirebaseApp value) => Get.put(AuthanticationRepositories()));
+  );
+  // .then((FirebaseApp value) => Get.put(AuthanticationRepositories()));
+  FlutterNativeSplash.remove();
 
   runApp(const MyApp());
 }
@@ -39,15 +44,17 @@ class MyApp extends StatelessWidget {
           // DummyPage()
           // SignInPage()
           //  SignupPage()
-          // Custombottomnivationbar(),
-          // OnbordingScreen(),
-          // VarificationPage()
-
-          Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
-      ),
+          Custombottomnivationbar(),
+      // OnbordingScreen(),
+      // VarificationPage()
+      // ForgatePasswordPage()
+      // ResentPasswordPage()
+      // ProfileDetailsPage(),
+      //     Scaffold(
+      //   body: Center(
+      //     child: CircularProgressIndicator(),
+      //   ),
+      // ),
     );
   }
 }

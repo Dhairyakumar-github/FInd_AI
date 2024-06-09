@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:project/Models/userModel.dart';
@@ -20,9 +21,18 @@ class UserRepositories extends GetxController {
 
   // Functions to save user Recods with google Sign In to Firestore
 
-  Future<void> saveUserRecord(UserModel user) async {
+  Future<void> saveUserRecord(UserCredential? userCredential) async {
     try {
-      await _db.collection("User").doc(user.id).set(user.toJson());
+      if (userCredential != null) {
+        final newuser = UserModel(
+          name: userCredential.user!.displayName ?? "",
+          email: userCredential.user!.email ?? "",
+          password: "Google User",
+          id: userCredential.user!.uid,
+          profilePictue: userCredential.user!.photoURL ?? "",
+        );
+        await saveUserData(newuser);
+      }
     } on FirebaseException catch (e) {
       throw CustomFirebaseExceptions.handleFirebaseAuthException(e.code);
     } catch (e) {

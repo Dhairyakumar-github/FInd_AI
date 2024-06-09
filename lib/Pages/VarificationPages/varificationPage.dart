@@ -9,7 +9,8 @@ import 'package:project/Repositories/authantication_repositories.dart';
 import 'package:project/controllor/verifyingControllor.dart';
 
 class VarificationPage extends StatelessWidget {
-  VarificationPage({super.key});
+  final email;
+  VarificationPage({super.key, this.email});
   final varificationControllor = Get.put(Verifyingcontrollor());
   @override
   Widget build(BuildContext context) {

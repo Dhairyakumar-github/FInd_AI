@@ -9,18 +9,18 @@ class Loader {
       barrierDismissible: false,
       builder: (_) => PopScope(
         child: Container(
-          color: Color.fromARGB(255, 244, 243, 238),
+          color: const Color.fromARGB(255, 244, 243, 238),
           height: double.infinity,
           width: double.infinity,
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 250,
               ),
               SizedBox(
-                  width: 200,
+                  width: 130,
                   child: LottieBuilder.asset("assets/lottie/loading.json")),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
             ],
@@ -41,11 +41,11 @@ class Loader {
       isDismissible: true,
       shouldIconPulse: true,
       colorText: const Color.fromARGB(255, 228, 238, 243),
-      backgroundColor: Color.fromARGB(255, 248, 255, 45),
+      backgroundColor: const Color.fromARGB(255, 248, 255, 45),
       snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds: 3),
-      margin: EdgeInsets.all(20),
-      icon: Icon(Icons.warning_rounded),
+      duration: const Duration(seconds: 3),
+      margin: const EdgeInsets.all(20),
+      icon: const Icon(Icons.warning_rounded),
     );
   }
 
@@ -56,11 +56,11 @@ class Loader {
       isDismissible: true,
       shouldIconPulse: true,
       colorText: const Color.fromARGB(255, 228, 238, 243),
-      backgroundColor: Color.fromARGB(255, 255, 23, 23),
+      backgroundColor: const Color.fromARGB(255, 255, 23, 23),
       snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds: 3),
-      margin: EdgeInsets.all(20),
-      icon: Icon(Icons.warning_rounded),
+      duration: const Duration(seconds: 3),
+      margin: const EdgeInsets.all(20),
+      icon: const Icon(Icons.warning_rounded),
     );
   }
 
@@ -71,11 +71,11 @@ class Loader {
       isDismissible: true,
       shouldIconPulse: true,
       colorText: const Color.fromARGB(255, 228, 238, 243),
-      backgroundColor: Color.fromARGB(255, 0, 255, 72),
+      backgroundColor: const Color.fromARGB(255, 0, 255, 72),
       snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds: 3),
-      margin: EdgeInsets.all(20),
-      icon: Icon(Icons.warning_rounded),
+      duration: const Duration(seconds: 3),
+      margin: const EdgeInsets.all(20),
+      icon: const Icon(Icons.warning_rounded),
     );
   }
 }

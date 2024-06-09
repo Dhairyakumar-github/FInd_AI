@@ -23,7 +23,7 @@ class NetworkManager extends GetxController {
   Future<void> _updateConnectionStatus(List<ConnectivityResult> result) async {
     if (_connectivityState.value == ConnectivityResult.none) {
       Loader.WarningSnakBar(title: "No internet connectivity");
-    }
+    } else {}
   }
 
 // check the connectivity status
