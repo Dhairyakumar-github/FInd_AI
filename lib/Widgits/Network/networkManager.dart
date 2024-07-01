@@ -21,7 +21,8 @@ class NetworkManager extends GetxController {
 
 // update the connectivity status based on changes in connectivity and show a relevent popup for the internal connectivity
   Future<void> _updateConnectionStatus(List<ConnectivityResult> result) async {
-    if (_connectivityState.value == ConnectivityResult.none) {
+    if (_connectivityState.value == ConnectivityResult.mobile) {
+    } else if (_connectivityState.value == ConnectivityResult.none) {
       Loader.WarningSnakBar(title: "No internet connectivity");
     } else {}
   }

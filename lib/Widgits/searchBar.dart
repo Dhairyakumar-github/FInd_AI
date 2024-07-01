@@ -11,7 +11,7 @@ class CustomSearchBar extends StatelessWidget {
         alignment: Alignment.center,
         width: MediaQuery.of(context).size.width * 0.95,
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 229, 227, 222),
+          color: Color.fromARGB(255, 235, 236, 237),
           borderRadius: BorderRadius.circular(30),
         ),
         child: Row(
@@ -25,6 +25,7 @@ class CustomSearchBar extends StatelessWidget {
                   textAlignVertical: TextAlignVertical.top,
                   style: const TextStyle(fontSize: 20),
                   decoration: InputDecoration(
+                    focusedBorder: InputBorder.none,
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     hintText: "Type Something",

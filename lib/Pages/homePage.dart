@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/Pages/SearchPage.dart';
 import 'package:project/Widgits/CarousalSlider.dart';
-
 import 'package:project/Widgits/CustomCategory.dart';
 import 'package:project/Widgits/card.dart';
 import 'package:project/Widgits/searchBar.dart';
@@ -19,7 +18,7 @@ class HomePage extends StatelessWidget {
       //   backgroundColor: const Color.fromARGB(255, 150, 207, 235),
       // ),
       // backgroundColor: Color.fromARGB(255, 242, 245, 245),
-      backgroundColor: const Color.fromARGB(255, 245, 248, 252),
+      // backgroundColor: const Color.fromARGB(255, 235, 236, 237),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,20 +26,22 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Find Ai ",
-                  style: TextStyle(
-                      fontFamily: "Bhloo Bhai 2",
-                      fontSize: 45,
-                      fontWeight: FontWeight.w500,
-                      color: Color.fromARGB(255, 0, 0, 0)),
-                ),
-              ),
-            ),
+            // const Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 20),
+            //   child: Align(
+            //     alignment: Alignment.topLeft,
+            //     child: Text(
+            //       "Find Ai ",
+            //       style: TextStyle(
+            //           fontFamily: "Bhloo Bhai 2",
+            //           fontSize: 34,
+            //           fontWeight: FontWeight.w500,
+            //           color: Color.fromARGB(255, 0, 0, 0)),
+            //     ),
+            //   ),
+            // ),
+
+            // ---------------------------------------------------
             // Hero(
             //   tag: "hero",
             //   child: GestureDetector(
@@ -98,7 +99,7 @@ class HomePage extends StatelessWidget {
                 "Category",
                 style: TextStyle(
                   fontFamily: "Bhloo Bhai 2",
-                  fontSize: 28,
+                  fontSize: 24,
                   fontWeight: FontWeight.w600,
                   color: Color.fromARGB(255, 0, 0, 0),
                 ),
@@ -129,18 +130,17 @@ class HomePage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                "Latest",
+                "Latest Ai",
                 style: TextStyle(
-                    fontFamily: "Bhloo Bhai 2",
-                    fontSize: 28,
-                    fontWeight: FontWeight.w600,
-                    color: Color.fromARGB(255, 0, 0, 0)),
+                  fontFamily: "Bhloo Bhai 2",
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
               ),
             ),
-            // const SizedBox(
-            //   height: 20,
-            // ),
-            Wrap(
+
+            const Wrap(
               children: [
                 CustomCard(),
                 CustomCard(),

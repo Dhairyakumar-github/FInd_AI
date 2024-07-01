@@ -19,7 +19,7 @@ class CustomCategory extends StatelessWidget {
         "Art",
         style: TextStyle(
             // color: Colors.white,
-            fontSize: 22,
+            fontSize: 16,
             fontFamily: "Bhloo Bhai 2",
             fontWeight: FontWeight.w600),
       ),

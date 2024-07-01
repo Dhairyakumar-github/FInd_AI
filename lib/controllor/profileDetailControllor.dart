@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:project/Pages/ProfilePage/userProfilePage.dart';
-import 'package:project/Pages/ProfilePage/userUplodsPage.dart';
+
+import 'package:project/Pages/ProfilePage/ProfileTabs/profileTabOne.dart';
+import 'package:project/Pages/ProfilePage/ProfileTabs/profileTabTwo.dart';
 
 class ProfileMainControllor extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -16,11 +17,10 @@ class ProfileMainControllor extends GetxController
   var controllor;
   final List<Tab> myTab = [
     Tab(
-      // text: "hello1",
-      child: UserProfilePage(),
+      child: ProfileTabOne(),
     ),
     Tab(
-      child: UserUplodsPage(),
+      child: ProfileTabTwo(),
     ),
   ];
 }

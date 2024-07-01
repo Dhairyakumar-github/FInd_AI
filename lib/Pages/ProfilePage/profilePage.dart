@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project/Pages/ProfilePage/ProfileUploadsPage/profileUploadPage.dart';
 import 'package:project/Pages/ProfilePage/profileMainPage.dart';
+import 'package:project/Pages/settingPage.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -24,7 +26,7 @@ class ProfilePage extends StatelessWidget {
                   height: 90,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(22),
-                    color: const Color.fromARGB(255, 218, 222, 225),
+                    color: const Color.fromARGB(255, 235, 236, 237),
                   ),
                   child: Row(
                     children: [
@@ -74,16 +76,16 @@ class ProfilePage extends StatelessWidget {
                 children: [
                   Flexible(
                     flex: 3,
-                    child: InkWell(
-                      onTap: () => Get.to(() => ProfileMainPage()),
-                      child: SizedBox(
-                        height: 400,
-                        width: MediaQuery.of(context).size.width,
-                        child: Column(
-                          children: [
-                            Flexible(
-                              flex: 1,
-                              fit: FlexFit.tight,
+                    child: SizedBox(
+                      height: 400,
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        children: [
+                          Flexible(
+                            flex: 1,
+                            fit: FlexFit.tight,
+                            child: InkWell(
+                              onTap: () => Get.to(() => ProfileMainPage()),
                               child: Container(
                                 alignment: Alignment.center,
                                 margin:
@@ -103,9 +105,12 @@ class ProfilePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Flexible(
-                              flex: 2,
-                              fit: FlexFit.tight,
+                          ),
+                          Flexible(
+                            flex: 2,
+                            fit: FlexFit.tight,
+                            child: InkWell(
+                              onTap: () => Get.to(() => ProfileUploadPage()),
                               child: Container(
                                 height: double.infinity,
                                 width: double.infinity,
@@ -124,17 +129,19 @@ class ProfilePage extends StatelessWidget {
                                       size: 40,
                                       color: Colors.white,
                                     ),
-                                    Text("Uploads",
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500))
+                                    Text(
+                                      "Uploads",
+                                      style: TextStyle(
+                                          fontSize: 22,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500),
+                                    )
                                   ],
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -208,20 +215,23 @@ class ProfilePage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 120,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: const Color.fromARGB(255, 183, 114, 58),
-                  ),
-                  child: Text(
-                    "Settings",
-                    style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500),
+                child: InkWell(
+                  onTap: () => Get.to(() => SettingPage()),
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 120,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: const Color.fromARGB(255, 183, 114, 58),
+                    ),
+                    child: Text(
+                      "Settings",
+                      style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ),
               ),

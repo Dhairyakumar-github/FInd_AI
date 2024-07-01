@@ -1,10 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/Pages/resentPassword.dart';
 import 'package:project/Repositories/authantication_repositories.dart';
 import 'package:project/Widgits/Network/networkManager.dart';
-import 'package:project/utils/Exceptions/firebase_auth_exception.dart';
+
 import 'package:project/utils/loder.dart';
 
 class ForgatPasswordControllor extends GetxController {
